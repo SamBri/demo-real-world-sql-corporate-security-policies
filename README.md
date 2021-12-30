@@ -24,6 +24,11 @@ set sql_safe_updates = 0;
 select * from bankcustomer;
 -- in testdb, intern, Adwoa has increased Sam's balance to a million for UAT purposes
 update bankcustomer set balance = 1000000 where uid = 34;
+```
+
+# Intern server response
+<img src="https://github.com/SamBri/demo-real-world-sql-corporate-security-policies/blob/master/intern_server_response.PNG"></img>
+
 
 
 
