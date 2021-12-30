@@ -29,10 +29,48 @@ update bankcustomer set balance = 1000000 where uid = 34;
 # Intern server response
 <img src="https://github.com/SamBri/demo-real-world-sql-corporate-security-policies/blob/master/intern_server_response.PNG"></img>
 
-
-
-
-
-
-
+# Full time sql script
+```sql 
+use customerdb;
+set sql_safe_updates = 0;
+-- full time kwame has all persmisisons CRUD granted on LIVE db.
+select * from bankcustomer;
+update bankcustomer set balance = 100 where uid = 34;
 ```
+
+# Full time server response
+<img src="https://github.com/SamBri/demo-real-world-sql-corporate-security-policies/blob/master/full_time_server_response.PNG"></img>
+
+# Contract sql script
+```sql 
+use customerdb;
+use financedb;
+set sql_safe_updates = 0;
+-- contract, akua can select and update per her employment
+select * from bankcustomer;
+update bankcustomer set balance = 100 where uid = 34;
+```
+
+# Contract server response
+<img src="https://github.com/SamBri/demo-real-world-sql-corporate-security-policies/blob/master/contract_server_response.PNG"></img>
+
+# Consultant sql script 
+```sql
+use customerdb;
+use financedb;
+use testdb;
+set sql_safe_updates = 0;
+-- consultant, kwesi can has access to only testdb with all permissions
+select * from bankcustomer;
+update bankcustomer set balance = 100 where uid = 34;
+-- consultant, kwesi has dropped table bankcustomer
+drop table bankcustomer;
+```
+
+# Consultant server response 
+<img src="https://github.com/SamBri/demo-real-world-sql-corporate-security-policies/blob/master/consultant_server_response.PNG"></img>
+
+
+
+
+
